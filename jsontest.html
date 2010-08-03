@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	</head>
+		<body>
+			<div id="result">
+				<p>O texto e a imagem abaixo estao sendo retornados do meu server free couchone, nao instalei nada localmente #fuckyeah</p>
+				
+			</div>	
+			<script>$.getJSON("http://strikegamer.couchone.com/family/7809cc7539d9aba0b04032b32c000c0f",
+				function(data){
+					$('<label/>').attr('innerText', data.name).appendTo('#result');
+					$('<p/>').appendTo('#result');
+					$('<label/>').attr('innerText', data.address).appendTo('#result');
+					$('<p/>').appendTo('#result');
+					$('<label/>').attr('innerText', data.telephone).appendTo('#result');
+					$('<p/>').appendTo('#result');
+					$("<img/>").attr("src", data.photo).appendTo("#result");
+				});
+			</script>
+		</body>
+</html>
